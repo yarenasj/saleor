@@ -11,7 +11,7 @@ requires-python = ">=3.12,<3.13"
 readme = "README.md"
 license = "BSD-3-Clause"
 dependencies = [
-    "Adyen>=4.0.0,<5",
+    "Adyen>=4.0.0,<14",
     "asgiref>=3.7.2,<4",
     "Authlib>=1.6.0,<2",
     "authorizenet>=1.1.5,<2",
