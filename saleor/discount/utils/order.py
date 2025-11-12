@@ -338,10 +338,12 @@ def prepare_order_line_discount_objects_for_catalogue_promotions(lines_info):
             line_discounts_to_remove.extend(discounts_to_update)
             continue
 
-        # check if the line price is discounted by catalogue promotion
-        discounted_line = is_discounted_line_by_catalogue_promotion(
-            line_info.channel_listing
-        )
+        discounted_line = False 
+        if line_info.channel_listing is not None:
+            # check if the line price is discounted by catalogue promotion
+            discounted_line = is_discounted_line_by_catalogue_promotion(
+                line_info.channel_listing
+            )
 
         # delete all existing discounts if the line is not discounted or it is a gift
         if not discounted_line or line.is_gift:
